@@ -1,20 +1,17 @@
----
----
-
-@use 'abstracts/variables' with (
-  $theme: '{{ site.theme_mode }}'
-);
-
-/* prettier-ignore */
-@use 'main
-{%- if jekyll.environment == 'production' -%}
-  .bundle
-{%- endif -%}
-';
-
-/* 底部图标整体居中 */
+/* 底部图标居中，统一间距 */
 #sidebar .sidebar-bottom {
   justify-content: center;
   padding-left: 1rem;
   padding-right: 1rem;
+  gap: 1rem;
+}
+
+/* 隐藏小圆点 */
+#sidebar .sidebar-bottom .icon-border {
+  display: none;
+}
+
+/* 清除主题原有的额外间距 */
+#sidebar .sidebar-bottom > a:not(:last-child) {
+  margin-right: 0;
 }
